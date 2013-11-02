@@ -24,5 +24,5 @@ class Coordinates(object):
 
         """
         if isinstance(rightHandObject, Coordinates):
-            return abs(self.x - rightHandObject.x) < 0.05 and abs(self.y - rightHandObject.y)
+            return abs(self.x - rightHandObject.x) < 0.0001 and abs(self.y - rightHandObject.y) < 0.0001
         return NotImplemented
