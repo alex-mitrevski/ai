@@ -58,7 +58,7 @@ class Graph(object):
         self.nodes[node.label] = node
 
     def add_edge(self, parentNodeKey, childNodeKey):
-        """Adds a node between the nodes with labels
+        """Adds a directed edge between the nodes with labels
         'parentNodeKey' and 'childNodeKey'.
         Returns 'True' if the edge is added successfully.
         If the edge already exists, does not add it to the graph and returns 'False'.
