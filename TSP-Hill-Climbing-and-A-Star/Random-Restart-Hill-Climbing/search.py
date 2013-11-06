@@ -158,6 +158,9 @@ class CitySearchLibrary(object):
             if i == city_to_swap:
                 continue
 
+            if city_to_swap == 0:
+                neighbour[len(neighbour)-1] = neighbour[i]
+
             neighbour = list(city_arrangement)
             temp = neighbour[i]
             neighbour[i] = neighbour[city_to_swap]
@@ -211,11 +214,11 @@ class CitySearchLibrary(object):
 
         """
         number_of_rows = (number_of_restarts) / 3 + 1
-        number_of_columns = min(3, number_of_restarts)
+        number_of_columns = min(3, number_of_restarts + 1)
         current_subplot = 1
 
         pyplot.figure(1)
-        for i in xrange(number_of_restarts):
+        for i in xrange(number_of_restarts+1):
             descends = [x+1 for x in xrange(number_of_descends[i] + 1)]
             pyplot.subplot(number_of_rows, number_of_columns, current_subplot)
             pyplot.xlabel('Number of iterations')
