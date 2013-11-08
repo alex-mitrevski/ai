@@ -158,13 +158,14 @@ class CitySearchLibrary(object):
             if i == city_to_swap:
                 continue
 
-            if city_to_swap == 0:
-                neighbour[len(neighbour)-1] = neighbour[i]
-
             neighbour = list(city_arrangement)
             temp = neighbour[i]
             neighbour[i] = neighbour[city_to_swap]
             neighbour[city_to_swap] = temp
+
+            if city_to_swap == 0:
+                neighbour[len(neighbour)-1] = neighbour[i]
+
             neighbours.append(neighbour)
 
         return neighbours
