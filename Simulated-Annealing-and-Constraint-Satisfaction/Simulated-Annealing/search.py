@@ -184,8 +184,6 @@ class CitySearchLibrary(object):
 
         """
         probability_of_changing = math.exp(-delta_cost/temperature)
-        probability_of_not_changing = 1. - probability_of_changing
-
         random_number = random.random()
         if random_number < probability_of_changing:
             return True
